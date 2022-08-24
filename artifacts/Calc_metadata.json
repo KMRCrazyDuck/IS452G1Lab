@@ -1,0 +1,107 @@
+{
+	"compiler": {
+		"version": "0.4.26+commit.4563c3fc"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "value",
+				"outputs": [
+					{
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "_value3",
+						"type": "uint256"
+					},
+					{
+						"name": "_value4",
+						"type": "uint256"
+					}
+				],
+				"name": "deductions",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "value2",
+				"outputs": [
+					{
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "_value1",
+						"type": "uint256"
+					},
+					{
+						"name": "_value2",
+						"type": "uint256"
+					}
+				],
+				"name": "add",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"calc.sol": "Calc"
+		},
+		"evmVersion": "byzantium",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"SafeMath.sol": {
+			"keccak256": "0x0e47dae67c5fc9508d35d208cde56492a855f96cc4da7936028ff422de39a1e4",
+			"urls": [
+				"bzzr://97f5653895b212382604613979b68a98f48f84473c3dc32cb3dca1d96bb02492"
+			]
+		},
+		"calc.sol": {
+			"keccak256": "0xb3a2a15ad57b0e8b2e8c6e77b2ca5e7e432ee67820cfb6ea20b4e9504f5ae41f",
+			"urls": [
+				"bzzr://8eeb3a424734c90065fb8c88a65751d989656679d57820a760309744c6b6b68b"
+			]
+		}
+	},
+	"version": 1
+}
