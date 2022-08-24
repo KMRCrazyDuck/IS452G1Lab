@@ -39,3 +39,4 @@ Week 2
 - Mydata.sol
 - Counter.sol
 - EventArithmetic.sol
+- Config.sol
