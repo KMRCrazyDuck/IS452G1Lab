@@ -1,0 +1,84 @@
+{
+	"compiler": {
+		"version": "0.6.3+commit.8dda9521"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_from",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "_operation",
+						"type": "string"
+					}
+				],
+				"name": "performOperation",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_a",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_b",
+						"type": "uint256"
+					}
+				],
+				"name": "performMath",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "_sum",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"EventArithmetic.sol": "EventArithmetic"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"EventArithmetic.sol": {
+			"keccak256": "0xb7cb0780be75f752787b84d14ae5abd53c5c4c8c9e57974c8c9f4f20ce26c15f",
+			"urls": [
+				"bzz-raw://db7d24fb3a2f74a44a1068ef85b34b0e766902bb645bdbd3ad77ef62763770d8",
+				"dweb:/ipfs/Qmcv4vXdN3JVf35BJpKvUaEgEhx5ZmymXBJSw9ELaVkcRh"
+			]
+		}
+	},
+	"version": 1
+}
