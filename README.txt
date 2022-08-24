@@ -38,3 +38,4 @@ Week 2
 - Mystatus.sol
 - Mydata.sol
 - Counter.sol
+- EventArithmetic.sol

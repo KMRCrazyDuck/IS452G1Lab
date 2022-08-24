@@ -1,0 +1,50 @@
+{
+	"compiler": {
+		"version": "0.4.20+commit.3155dd80"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"constant": false,
+				"inputs": [],
+				"name": "callContractB",
+				"outputs": [
+					{
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Config.sol": "A"
+		},
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Config.sol": {
+			"keccak256": "0x014275c4336d4ec6454c85dd0dd5783822c989c62dd2f49e29b4074449855e1b",
+			"urls": [
+				"bzzr://444822a12d52278a31fbb3aa6c038d9d832cdffb1411abab7850e7b54a323e21"
+			]
+		}
+	},
+	"version": 1
+}
