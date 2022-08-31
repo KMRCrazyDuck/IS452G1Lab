@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.4.20+commit.3155dd80"
+		"version": "0.4.26+commit.4563c3fc"
 	},
 	"language": "Solidity",
 	"output": {
@@ -31,6 +31,7 @@
 		"compilationTarget": {
 			"Config.sol": "B"
 		},
+		"evmVersion": "byzantium",
 		"libraries": {},
 		"optimizer": {
 			"enabled": false,
@@ -40,9 +41,9 @@
 	},
 	"sources": {
 		"Config.sol": {
-			"keccak256": "0x014275c4336d4ec6454c85dd0dd5783822c989c62dd2f49e29b4074449855e1b",
+			"keccak256": "0x652d62e18236835aff4ddf1d2f8c9f658272d6ca859f3ca0b6b2d8739957a821",
 			"urls": [
-				"bzzr://444822a12d52278a31fbb3aa6c038d9d832cdffb1411abab7850e7b54a323e21"
+				"bzzr://e0c87f753b95072a7a9a5759ce54ae16138cab5e5d7e764ac73801554b7eb95d"
 			]
 		}
 	},
