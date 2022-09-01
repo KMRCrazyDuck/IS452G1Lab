@@ -2,7 +2,7 @@ pragma solidity ^0.4.20;
 
 contract C {
     function sendAddress() public view returns(address){
-        return msg.sender;
+        return tx.origin;
     }
 }
 
@@ -19,3 +19,4 @@ contract A {
         return _b.callContractC();
     }
 }
+

@@ -41,9 +41,9 @@
 	},
 	"sources": {
 		"Config.sol": {
-			"keccak256": "0x652d62e18236835aff4ddf1d2f8c9f658272d6ca859f3ca0b6b2d8739957a821",
+			"keccak256": "0xd99dac2645c4e097f7276bf25058654e2308ef28182f04b48c20acc67b139c73",
 			"urls": [
-				"bzzr://e0c87f753b95072a7a9a5759ce54ae16138cab5e5d7e764ac73801554b7eb95d"
+				"bzzr://0974511d102208c03e5f131646949b1c90181df976e4a0049bfb6296f3f3e79e"
 			]
 		}
 	},

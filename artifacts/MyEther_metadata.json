@@ -1,0 +1,76 @@
+{
+	"compiler": {
+		"version": "0.5.1+commit.c8a2cb62"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"constant": false,
+				"inputs": [],
+				"name": "sendEther",
+				"outputs": [],
+				"payable": true,
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "sender",
+				"outputs": [
+					{
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"name": "_wallet",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			}
+		],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"MyEther.sol": "MyEther"
+		},
+		"evmVersion": "byzantium",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"MyEther.sol": {
+			"keccak256": "0x4a981d983278743a77adfc7db2dd361d9f06e24c1d8441a9dfab16a5a7b02771",
+			"urls": [
+				"bzzr://d90fe08d43f4c98ab17b6a747728559f71a272acbeb996a06609173260f86254"
+			]
+		}
+	},
+	"version": 1
+}
