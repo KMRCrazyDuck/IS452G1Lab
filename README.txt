@@ -40,3 +40,8 @@ Week 2
 - Counter.sol
 - EventArithmetic.sol
 - Config.sol
+- Error.sol
+- MyEther.sol 
+
+Week 4
+- Auction.sol
