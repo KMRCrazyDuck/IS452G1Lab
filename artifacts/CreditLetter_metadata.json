@@ -1,0 +1,248 @@
+{
+	"compiler": {
+		"version": "0.4.26+commit.4563c3fc"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "status",
+						"type": "bool"
+					},
+					{
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "setStatusPaid",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "status",
+						"type": "bool"
+					},
+					{
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "setStatusApproved",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "getInfo",
+				"outputs": [
+					{
+						"name": "issuerVal",
+						"type": "address"
+					},
+					{
+						"name": "holderVal",
+						"type": "address"
+					},
+					{
+						"name": "acceptorVal",
+						"type": "address"
+					},
+					{
+						"name": "issuanceTimeVal",
+						"type": "uint256"
+					},
+					{
+						"name": "interestRateVal",
+						"type": "uint256"
+					},
+					{
+						"name": "creditVal",
+						"type": "uint256"
+					},
+					{
+						"name": "approved",
+						"type": "bool"
+					},
+					{
+						"name": "paid",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "transfer",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "resetCreditAmount",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"name": "issuerVal",
+						"type": "address"
+					},
+					{
+						"name": "holderVal",
+						"type": "address"
+					},
+					{
+						"name": "acceptorVal",
+						"type": "address"
+					},
+					{
+						"name": "issuanceTimeVal",
+						"type": "uint256"
+					},
+					{
+						"name": "interestRateVal",
+						"type": "uint256"
+					},
+					{
+						"name": "creditVal",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"name": "latestStatus",
+						"type": "bool"
+					},
+					{
+						"indexed": false,
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "StatusChanged",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "HolderChanged",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"name": "original",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "CreditChanged",
+				"type": "event"
+			}
+		],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"CreditLetter.sol": "CreditLetter"
+		},
+		"evmVersion": "byzantium",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"CreditLetter.sol": {
+			"keccak256": "0x9bd9d2a1c3f6d3204cecd37a2ec2bb17021330f368a630305eb64ef62e77388a",
+			"urls": [
+				"bzzr://c33d254bd7cf383a2e13f4c0e7341d1cdfcc4cb678d7b5ec8184fd0014208a39"
+			]
+		}
+	},
+	"version": 1
+}

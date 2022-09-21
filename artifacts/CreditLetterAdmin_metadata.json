@@ -1,0 +1,116 @@
+{
+	"compiler": {
+		"version": "0.4.26+commit.4563c3fc"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "issuer",
+						"type": "address"
+					},
+					{
+						"name": "holder",
+						"type": "address"
+					},
+					{
+						"name": "acceptor",
+						"type": "address"
+					},
+					{
+						"name": "issuanceTime",
+						"type": "uint256"
+					},
+					{
+						"name": "interestRate",
+						"type": "uint256"
+					},
+					{
+						"name": "credit",
+						"type": "uint256"
+					}
+				],
+				"name": "create",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "originalAddress",
+						"type": "address"
+					},
+					{
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "split",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"name": "addr",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "CreateLog",
+				"type": "event"
+			}
+		],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"CreditLetterAdmin.sol": "CreditLetterAdmin"
+		},
+		"evmVersion": "byzantium",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"CreditLetter.sol": {
+			"keccak256": "0x9bd9d2a1c3f6d3204cecd37a2ec2bb17021330f368a630305eb64ef62e77388a",
+			"urls": [
+				"bzzr://c33d254bd7cf383a2e13f4c0e7341d1cdfcc4cb678d7b5ec8184fd0014208a39"
+			]
+		},
+		"CreditLetterAdmin.sol": {
+			"keccak256": "0xa7ba719008ba74ac54c122c5d3a8d690a46507771c221321d5593be48785aee1",
+			"urls": [
+				"bzzr://6864a9a06fade45b4b9ab4a716a95da34fa4e510bf89481fd2ceeb1b27f37c00"
+			]
+		}
+	},
+	"version": 1
+}

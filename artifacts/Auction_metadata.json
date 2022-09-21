@@ -186,10 +186,10 @@
 	},
 	"sources": {
 		"Auction.sol": {
-			"keccak256": "0x7267c26261c84ba551d11adbb6706bd842947f1a088d773be3e1b72bb03aba4c",
+			"keccak256": "0xdba4706a39771c40d09900b261a5189d5a5e4b4d8cb522888d2895d0e51c6f28",
 			"urls": [
-				"bzz-raw://52844d5eabcbc2d020b44c0c83549c4b8d8dd4aefa010501a970d11df45070f5",
-				"dweb:/ipfs/QmX63khRtrnRmuGaaPtAzvBudzRqNVLZfkTdPvbExrzz3z"
+				"bzz-raw://87fce87d8b2db10fec6a274030c2077cc4f6c9a394efa8823b668a5defd48705",
+				"dweb:/ipfs/QmdkMfLd2dYjtoGVGc7n5dtmpKPbYFNZStM4Z1fVqtSfeP"
 			]
 		}
 	},

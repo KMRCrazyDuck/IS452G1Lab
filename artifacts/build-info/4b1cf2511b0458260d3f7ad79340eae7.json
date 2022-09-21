@@ -1,0 +1,1292 @@
+{
+	"id": "4b1cf2511b0458260d3f7ad79340eae7",
+	"_format": "hh-sol-build-info-1",
+	"solcVersion": "0.4.26",
+	"solcLongVersion": "0.4.26+commit.4563c3fc",
+	"input": {
+		"language": "Solidity",
+		"sources": {
+			"CreditLetter.sol": {
+				"content": "pragma solidity ^0.4.25;\r\n\r\ncontract CreditLetter {\r\n    // Issuer of the credit letter.\r\n    address private issuer;\r\n    // Current holder of the credit letter.\r\n    address private holder;\r\n    // Acceptor of the credit\r\n    address private acceptor;\r\n    // Issuance timestamp\r\n    uint256 private issuanceTime;\r\n    // Interest rate\r\n    uint256 private interestRate;\r\n    // Credit.\r\n    uint256 private credit;\r\n\r\n    bool private statusApproved = false;\r\n    // Status : Whether it has been failed.\r\n    bool private statusPaid = false;\r\n    // Flags for status\r\n    uint256 private STATUS_APPROVED_ID = 0;\r\n    uint256 private STATUS_PAID_ID = 1;\r\n    event StatusChanged(uint256 id, bool latestStatus, uint256 timestamp);\r\n\r\n    address[] private holderChangeHistory;\r\n    uint256[] private holderChangeTimestamps;\r\n    event HolderChanged(address from, address to, uint256 timestamp);\r\n    // Related to change of credit.\r\n    event CreditChanged(uint256 original, uint256 amount, uint256 timestamp);\r\n\r\n}\r\n\r\n"
+			}
+		},
+		"settings": {
+			"optimizer": {
+				"enabled": false,
+				"runs": 200
+			},
+			"outputSelection": {
+				"*": {
+					"": [
+						"ast"
+					],
+					"*": [
+						"abi",
+						"metadata",
+						"devdoc",
+						"userdoc",
+						"storageLayout",
+						"evm.legacyAssembly",
+						"evm.bytecode",
+						"evm.deployedBytecode",
+						"evm.methodIdentifiers",
+						"evm.gasEstimates",
+						"evm.assembly"
+					]
+				}
+			}
+		}
+	},
+	"output": {
+		"contracts": {
+			"CreditLetter.sol": {
+				"CreditLetter": {
+					"abi": [
+						{
+							"anonymous": false,
+							"inputs": [
+								{
+									"indexed": false,
+									"name": "id",
+									"type": "uint256"
+								},
+								{
+									"indexed": false,
+									"name": "latestStatus",
+									"type": "bool"
+								},
+								{
+									"indexed": false,
+									"name": "timestamp",
+									"type": "uint256"
+								}
+							],
+							"name": "StatusChanged",
+							"type": "event"
+						},
+						{
+							"anonymous": false,
+							"inputs": [
+								{
+									"indexed": false,
+									"name": "from",
+									"type": "address"
+								},
+								{
+									"indexed": false,
+									"name": "to",
+									"type": "address"
+								},
+								{
+									"indexed": false,
+									"name": "timestamp",
+									"type": "uint256"
+								}
+							],
+							"name": "HolderChanged",
+							"type": "event"
+						},
+						{
+							"anonymous": false,
+							"inputs": [
+								{
+									"indexed": false,
+									"name": "original",
+									"type": "uint256"
+								},
+								{
+									"indexed": false,
+									"name": "amount",
+									"type": "uint256"
+								},
+								{
+									"indexed": false,
+									"name": "timestamp",
+									"type": "uint256"
+								}
+							],
+							"name": "CreditChanged",
+							"type": "event"
+						}
+					],
+					"devdoc": {
+						"methods": {}
+					},
+					"evm": {
+						"assembly": "    /* \"CreditLetter.sol\":28:1016  contract CreditLetter {\r... */\n  mstore(0x40, 0x80)\n    /* \"CreditLetter.sol\":455:460  false */\n  0x0\n    /* \"CreditLetter.sol\":425:460  bool private statusApproved = false */\n  0x6\n  exp(0x100, 0x0)\n  dup2\n  sload\n  dup2\n  0xff\n  mul\n  not\n  and\n  swap1\n  dup4\n  iszero\n  iszero\n  mul\n  or\n  swap1\n  sstore\n  pop\n    /* \"CreditLetter.sol\":538:543  false */\n  0x0\n    /* \"CreditLetter.sol\":512:543  bool private statusPaid = false */\n  0x6\n  exp(0x100, 0x1)\n  dup2\n  sload\n  dup2\n  0xff\n  mul\n  not\n  and\n  swap1\n  dup4\n  iszero\n  iszero\n  mul\n  or\n  swap1\n  sstore\n  pop\n    /* \"CreditLetter.sol\":612:613  0 */\n  0x0\n    /* \"CreditLetter.sol\":575:613  uint256 private STATUS_APPROVED_ID = 0 */\n  0x7\n  sstore\n    /* \"CreditLetter.sol\":653:654  1 */\n  0x1\n    /* \"CreditLetter.sol\":620:654  uint256 private STATUS_PAID_ID = 1 */\n  0x8\n  sstore\n    /* \"CreditLetter.sol\":28:1016  contract CreditLetter {\r... */\n  callvalue\n    /* \"--CODEGEN--\":8:17   */\n  dup1\n    /* \"--CODEGEN--\":5:7   */\n  iszero\n  tag_1\n  jumpi\n    /* \"--CODEGEN--\":30:31   */\n  0x0\n    /* \"--CODEGEN--\":27:28   */\n  dup1\n    /* \"--CODEGEN--\":20:32   */\n  revert\n    /* \"--CODEGEN--\":5:7   */\ntag_1:\n    /* \"CreditLetter.sol\":28:1016  contract CreditLetter {\r... */\n  pop\n  dataSize(sub_0)\n  dup1\n  dataOffset(sub_0)\n  0x0\n  codecopy\n  0x0\n  return\nstop\n\nsub_0: assembly {\n        /* \"CreditLetter.sol\":28:1016  contract CreditLetter {\r... */\n      mstore(0x40, 0x80)\n      0x0\n      dup1\n      revert\n\n    auxdata: 0xa165627a7a7230582054bcb5b47621fd83389ffa9d3c227af539421870680be3bf56a15335ba84c6910029\n}\n",
+						"bytecode": {
+							"linkReferences": {},
+							"object": "60806040526000600660006101000a81548160ff0219169083151502179055506000600660016101000a81548160ff02191690831515021790555060006007556001600855348015604f57600080fd5b50603580605d6000396000f3006080604052600080fd00a165627a7a7230582054bcb5b47621fd83389ffa9d3c227af539421870680be3bf56a15335ba84c6910029",
+							"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 PUSH1 0x6 PUSH1 0x0 PUSH2 0x100 EXP DUP2 SLOAD DUP2 PUSH1 0xFF MUL NOT AND SWAP1 DUP4 ISZERO ISZERO MUL OR SWAP1 SSTORE POP PUSH1 0x0 PUSH1 0x6 PUSH1 0x1 PUSH2 0x100 EXP DUP2 SLOAD DUP2 PUSH1 0xFF MUL NOT AND SWAP1 DUP4 ISZERO ISZERO MUL OR SWAP1 SSTORE POP PUSH1 0x0 PUSH1 0x7 SSTORE PUSH1 0x1 PUSH1 0x8 SSTORE CALLVALUE DUP1 ISZERO PUSH1 0x4F JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x35 DUP1 PUSH1 0x5D PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN STOP PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT STOP LOG1 PUSH6 0x627A7A723058 KECCAK256 SLOAD 0xbc 0xb5 0xb4 PUSH23 0x21FD83389FFA9D3C227AF539421870680BE3BF56A15335 0xba DUP5 0xc6 SWAP2 STOP 0x29 ",
+							"sourceMap": "28:988:0:-;;;455:5;425:35;;;;;;;;;;;;;;;;;;;;538:5;512:31;;;;;;;;;;;;;;;;;;;;612:1;575:38;;653:1;620:34;;28:988;8:9:-1;5:2;;;30:1;27;20:12;5:2;28:988:0;;;;;;;"
+						},
+						"deployedBytecode": {
+							"linkReferences": {},
+							"object": "6080604052600080fd00a165627a7a7230582054bcb5b47621fd83389ffa9d3c227af539421870680be3bf56a15335ba84c6910029",
+							"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT STOP LOG1 PUSH6 0x627A7A723058 KECCAK256 SLOAD 0xbc 0xb5 0xb4 PUSH23 0x21FD83389FFA9D3C227AF539421870680BE3BF56A15335 0xba DUP5 0xc6 SWAP2 STOP 0x29 ",
+							"sourceMap": "28:988:0:-;;;;;"
+						},
+						"gasEstimates": {
+							"creation": {
+								"codeDepositCost": "10600",
+								"executionCost": "65662",
+								"totalCost": "76262"
+							}
+						},
+						"legacyAssembly": {
+							".code": [
+								{
+									"begin": 28,
+									"end": 1016,
+									"name": "PUSH",
+									"value": "80"
+								},
+								{
+									"begin": 28,
+									"end": 1016,
+									"name": "PUSH",
+									"value": "40"
+								},
+								{
+									"begin": 28,
+									"end": 1016,
+									"name": "MSTORE"
+								},
+								{
+									"begin": 455,
+									"end": 460,
+									"name": "PUSH",
+									"value": "0"
+								},
+								{
+									"begin": 425,
+									"end": 460,
+									"name": "PUSH",
+									"value": "6"
+								},
+								{
+									"begin": 425,
+									"end": 460,
+									"name": "PUSH",
+									"value": "0"
+								},
+								{
+									"begin": 425,
+									"end": 460,
+									"name": "PUSH",
+									"value": "100"
+								},
+								{
+									"begin": 425,
+									"end": 460,
+									"name": "EXP"
+								},
+								{
+									"begin": 425,
+									"end": 460,
+									"name": "DUP2"
+								},
+								{
+									"begin": 425,
+									"end": 460,
+									"name": "SLOAD"
+								},
+								{
+									"begin": 425,
+									"end": 460,
+									"name": "DUP2"
+								},
+								{
+									"begin": 425,
+									"end": 460,
+									"name": "PUSH",
+									"value": "FF"
+								},
+								{
+									"begin": 425,
+									"end": 460,
+									"name": "MUL"
+								},
+								{
+									"begin": 425,
+									"end": 460,
+									"name": "NOT"
+								},
+								{
+									"begin": 425,
+									"end": 460,
+									"name": "AND"
+								},
+								{
+									"begin": 425,
+									"end": 460,
+									"name": "SWAP1"
+								},
+								{
+									"begin": 425,
+									"end": 460,
+									"name": "DUP4"
+								},
+								{
+									"begin": 425,
+									"end": 460,
+									"name": "ISZERO"
+								},
+								{
+									"begin": 425,
+									"end": 460,
+									"name": "ISZERO"
+								},
+								{
+									"begin": 425,
+									"end": 460,
+									"name": "MUL"
+								},
+								{
+									"begin": 425,
+									"end": 460,
+									"name": "OR"
+								},
+								{
+									"begin": 425,
+									"end": 460,
+									"name": "SWAP1"
+								},
+								{
+									"begin": 425,
+									"end": 460,
+									"name": "SSTORE"
+								},
+								{
+									"begin": 425,
+									"end": 460,
+									"name": "POP"
+								},
+								{
+									"begin": 538,
+									"end": 543,
+									"name": "PUSH",
+									"value": "0"
+								},
+								{
+									"begin": 512,
+									"end": 543,
+									"name": "PUSH",
+									"value": "6"
+								},
+								{
+									"begin": 512,
+									"end": 543,
+									"name": "PUSH",
+									"value": "1"
+								},
+								{
+									"begin": 512,
+									"end": 543,
+									"name": "PUSH",
+									"value": "100"
+								},
+								{
+									"begin": 512,
+									"end": 543,
+									"name": "EXP"
+								},
+								{
+									"begin": 512,
+									"end": 543,
+									"name": "DUP2"
+								},
+								{
+									"begin": 512,
+									"end": 543,
+									"name": "SLOAD"
+								},
+								{
+									"begin": 512,
+									"end": 543,
+									"name": "DUP2"
+								},
+								{
+									"begin": 512,
+									"end": 543,
+									"name": "PUSH",
+									"value": "FF"
+								},
+								{
+									"begin": 512,
+									"end": 543,
+									"name": "MUL"
+								},
+								{
+									"begin": 512,
+									"end": 543,
+									"name": "NOT"
+								},
+								{
+									"begin": 512,
+									"end": 543,
+									"name": "AND"
+								},
+								{
+									"begin": 512,
+									"end": 543,
+									"name": "SWAP1"
+								},
+								{
+									"begin": 512,
+									"end": 543,
+									"name": "DUP4"
+								},
+								{
+									"begin": 512,
+									"end": 543,
+									"name": "ISZERO"
+								},
+								{
+									"begin": 512,
+									"end": 543,
+									"name": "ISZERO"
+								},
+								{
+									"begin": 512,
+									"end": 543,
+									"name": "MUL"
+								},
+								{
+									"begin": 512,
+									"end": 543,
+									"name": "OR"
+								},
+								{
+									"begin": 512,
+									"end": 543,
+									"name": "SWAP1"
+								},
+								{
+									"begin": 512,
+									"end": 543,
+									"name": "SSTORE"
+								},
+								{
+									"begin": 512,
+									"end": 543,
+									"name": "POP"
+								},
+								{
+									"begin": 612,
+									"end": 613,
+									"name": "PUSH",
+									"value": "0"
+								},
+								{
+									"begin": 575,
+									"end": 613,
+									"name": "PUSH",
+									"value": "7"
+								},
+								{
+									"begin": 575,
+									"end": 613,
+									"name": "SSTORE"
+								},
+								{
+									"begin": 653,
+									"end": 654,
+									"name": "PUSH",
+									"value": "1"
+								},
+								{
+									"begin": 620,
+									"end": 654,
+									"name": "PUSH",
+									"value": "8"
+								},
+								{
+									"begin": 620,
+									"end": 654,
+									"name": "SSTORE"
+								},
+								{
+									"begin": 28,
+									"end": 1016,
+									"name": "CALLVALUE"
+								},
+								{
+									"begin": 8,
+									"end": 17,
+									"name": "DUP1"
+								},
+								{
+									"begin": 5,
+									"end": 7,
+									"name": "ISZERO"
+								},
+								{
+									"begin": 5,
+									"end": 7,
+									"name": "PUSH [tag]",
+									"value": "1"
+								},
+								{
+									"begin": 5,
+									"end": 7,
+									"name": "JUMPI"
+								},
+								{
+									"begin": 30,
+									"end": 31,
+									"name": "PUSH",
+									"value": "0"
+								},
+								{
+									"begin": 27,
+									"end": 28,
+									"name": "DUP1"
+								},
+								{
+									"begin": 20,
+									"end": 32,
+									"name": "REVERT"
+								},
+								{
+									"begin": 5,
+									"end": 7,
+									"name": "tag",
+									"value": "1"
+								},
+								{
+									"begin": 5,
+									"end": 7,
+									"name": "JUMPDEST"
+								},
+								{
+									"begin": 28,
+									"end": 1016,
+									"name": "POP"
+								},
+								{
+									"begin": 28,
+									"end": 1016,
+									"name": "PUSH #[$]",
+									"value": "0000000000000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 28,
+									"end": 1016,
+									"name": "DUP1"
+								},
+								{
+									"begin": 28,
+									"end": 1016,
+									"name": "PUSH [$]",
+									"value": "0000000000000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 28,
+									"end": 1016,
+									"name": "PUSH",
+									"value": "0"
+								},
+								{
+									"begin": 28,
+									"end": 1016,
+									"name": "CODECOPY"
+								},
+								{
+									"begin": 28,
+									"end": 1016,
+									"name": "PUSH",
+									"value": "0"
+								},
+								{
+									"begin": 28,
+									"end": 1016,
+									"name": "RETURN"
+								}
+							],
+							".data": {
+								"0": {
+									".auxdata": "a165627a7a7230582054bcb5b47621fd83389ffa9d3c227af539421870680be3bf56a15335ba84c6910029",
+									".code": [
+										{
+											"begin": 28,
+											"end": 1016,
+											"name": "PUSH",
+											"value": "80"
+										},
+										{
+											"begin": 28,
+											"end": 1016,
+											"name": "PUSH",
+											"value": "40"
+										},
+										{
+											"begin": 28,
+											"end": 1016,
+											"name": "MSTORE"
+										},
+										{
+											"begin": 28,
+											"end": 1016,
+											"name": "PUSH",
+											"value": "0"
+										},
+										{
+											"begin": 28,
+											"end": 1016,
+											"name": "DUP1"
+										},
+										{
+											"begin": 28,
+											"end": 1016,
+											"name": "REVERT"
+										}
+									]
+								}
+							}
+						},
+						"methodIdentifiers": {}
+					},
+					"metadata": "{\"compiler\":{\"version\":\"0.4.26+commit.4563c3fc\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"name\":\"latestStatus\",\"type\":\"bool\"},{\"indexed\":false,\"name\":\"timestamp\",\"type\":\"uint256\"}],\"name\":\"StatusChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"from\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"timestamp\",\"type\":\"uint256\"}],\"name\":\"HolderChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"original\",\"type\":\"uint256\"},{\"indexed\":false,\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":false,\"name\":\"timestamp\",\"type\":\"uint256\"}],\"name\":\"CreditChanged\",\"type\":\"event\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"CreditLetter.sol\":\"CreditLetter\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"CreditLetter.sol\":{\"keccak256\":\"0xbbcf890bab01a90ce37abca3aafbc8289d8e5b0038db634d85809aac76eeb8a6\",\"urls\":[\"bzzr://0698c002e71d6a2ba0a654aeb5041f4ce68fd691f0d1cbb9c0824367d8b7ea0a\"]}},\"version\":1}",
+					"userdoc": {
+						"methods": {}
+					}
+				}
+			}
+		},
+		"sources": {
+			"CreditLetter.sol": {
+				"ast": {
+					"absolutePath": "CreditLetter.sol",
+					"exportedSymbols": {
+						"CreditLetter": [
+							56
+						]
+					},
+					"id": 57,
+					"nodeType": "SourceUnit",
+					"nodes": [
+						{
+							"id": 1,
+							"literals": [
+								"solidity",
+								"^",
+								"0.4",
+								".25"
+							],
+							"nodeType": "PragmaDirective",
+							"src": "0:24:0"
+						},
+						{
+							"baseContracts": [],
+							"contractDependencies": [],
+							"contractKind": "contract",
+							"documentation": null,
+							"fullyImplemented": true,
+							"id": 56,
+							"linearizedBaseContracts": [
+								56
+							],
+							"name": "CreditLetter",
+							"nodeType": "ContractDefinition",
+							"nodes": [
+								{
+									"constant": false,
+									"id": 3,
+									"name": "issuer",
+									"nodeType": "VariableDeclaration",
+									"scope": 56,
+									"src": "94:22:0",
+									"stateVariable": true,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_address",
+										"typeString": "address"
+									},
+									"typeName": {
+										"id": 2,
+										"name": "address",
+										"nodeType": "ElementaryTypeName",
+										"src": "94:7:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_address",
+											"typeString": "address"
+										}
+									},
+									"value": null,
+									"visibility": "private"
+								},
+								{
+									"constant": false,
+									"id": 5,
+									"name": "holder",
+									"nodeType": "VariableDeclaration",
+									"scope": 56,
+									"src": "168:22:0",
+									"stateVariable": true,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_address",
+										"typeString": "address"
+									},
+									"typeName": {
+										"id": 4,
+										"name": "address",
+										"nodeType": "ElementaryTypeName",
+										"src": "168:7:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_address",
+											"typeString": "address"
+										}
+									},
+									"value": null,
+									"visibility": "private"
+								},
+								{
+									"constant": false,
+									"id": 7,
+									"name": "acceptor",
+									"nodeType": "VariableDeclaration",
+									"scope": 56,
+									"src": "228:24:0",
+									"stateVariable": true,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_address",
+										"typeString": "address"
+									},
+									"typeName": {
+										"id": 6,
+										"name": "address",
+										"nodeType": "ElementaryTypeName",
+										"src": "228:7:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_address",
+											"typeString": "address"
+										}
+									},
+									"value": null,
+									"visibility": "private"
+								},
+								{
+									"constant": false,
+									"id": 9,
+									"name": "issuanceTime",
+									"nodeType": "VariableDeclaration",
+									"scope": 56,
+									"src": "286:28:0",
+									"stateVariable": true,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_uint256",
+										"typeString": "uint256"
+									},
+									"typeName": {
+										"id": 8,
+										"name": "uint256",
+										"nodeType": "ElementaryTypeName",
+										"src": "286:7:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_uint256",
+											"typeString": "uint256"
+										}
+									},
+									"value": null,
+									"visibility": "private"
+								},
+								{
+									"constant": false,
+									"id": 11,
+									"name": "interestRate",
+									"nodeType": "VariableDeclaration",
+									"scope": 56,
+									"src": "343:28:0",
+									"stateVariable": true,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_uint256",
+										"typeString": "uint256"
+									},
+									"typeName": {
+										"id": 10,
+										"name": "uint256",
+										"nodeType": "ElementaryTypeName",
+										"src": "343:7:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_uint256",
+											"typeString": "uint256"
+										}
+									},
+									"value": null,
+									"visibility": "private"
+								},
+								{
+									"constant": false,
+									"id": 13,
+									"name": "credit",
+									"nodeType": "VariableDeclaration",
+									"scope": 56,
+									"src": "394:22:0",
+									"stateVariable": true,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_uint256",
+										"typeString": "uint256"
+									},
+									"typeName": {
+										"id": 12,
+										"name": "uint256",
+										"nodeType": "ElementaryTypeName",
+										"src": "394:7:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_uint256",
+											"typeString": "uint256"
+										}
+									},
+									"value": null,
+									"visibility": "private"
+								},
+								{
+									"constant": false,
+									"id": 16,
+									"name": "statusApproved",
+									"nodeType": "VariableDeclaration",
+									"scope": 56,
+									"src": "425:35:0",
+									"stateVariable": true,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_bool",
+										"typeString": "bool"
+									},
+									"typeName": {
+										"id": 14,
+										"name": "bool",
+										"nodeType": "ElementaryTypeName",
+										"src": "425:4:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_bool",
+											"typeString": "bool"
+										}
+									},
+									"value": {
+										"argumentTypes": null,
+										"hexValue": "66616c7365",
+										"id": 15,
+										"isConstant": false,
+										"isLValue": false,
+										"isPure": true,
+										"kind": "bool",
+										"lValueRequested": false,
+										"nodeType": "Literal",
+										"src": "455:5:0",
+										"subdenomination": null,
+										"typeDescriptions": {
+											"typeIdentifier": "t_bool",
+											"typeString": "bool"
+										},
+										"value": "false"
+									},
+									"visibility": "private"
+								},
+								{
+									"constant": false,
+									"id": 19,
+									"name": "statusPaid",
+									"nodeType": "VariableDeclaration",
+									"scope": 56,
+									"src": "512:31:0",
+									"stateVariable": true,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_bool",
+										"typeString": "bool"
+									},
+									"typeName": {
+										"id": 17,
+										"name": "bool",
+										"nodeType": "ElementaryTypeName",
+										"src": "512:4:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_bool",
+											"typeString": "bool"
+										}
+									},
+									"value": {
+										"argumentTypes": null,
+										"hexValue": "66616c7365",
+										"id": 18,
+										"isConstant": false,
+										"isLValue": false,
+										"isPure": true,
+										"kind": "bool",
+										"lValueRequested": false,
+										"nodeType": "Literal",
+										"src": "538:5:0",
+										"subdenomination": null,
+										"typeDescriptions": {
+											"typeIdentifier": "t_bool",
+											"typeString": "bool"
+										},
+										"value": "false"
+									},
+									"visibility": "private"
+								},
+								{
+									"constant": false,
+									"id": 22,
+									"name": "STATUS_APPROVED_ID",
+									"nodeType": "VariableDeclaration",
+									"scope": 56,
+									"src": "575:38:0",
+									"stateVariable": true,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_uint256",
+										"typeString": "uint256"
+									},
+									"typeName": {
+										"id": 20,
+										"name": "uint256",
+										"nodeType": "ElementaryTypeName",
+										"src": "575:7:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_uint256",
+											"typeString": "uint256"
+										}
+									},
+									"value": {
+										"argumentTypes": null,
+										"hexValue": "30",
+										"id": 21,
+										"isConstant": false,
+										"isLValue": false,
+										"isPure": true,
+										"kind": "number",
+										"lValueRequested": false,
+										"nodeType": "Literal",
+										"src": "612:1:0",
+										"subdenomination": null,
+										"typeDescriptions": {
+											"typeIdentifier": "t_rational_0_by_1",
+											"typeString": "int_const 0"
+										},
+										"value": "0"
+									},
+									"visibility": "private"
+								},
+								{
+									"constant": false,
+									"id": 25,
+									"name": "STATUS_PAID_ID",
+									"nodeType": "VariableDeclaration",
+									"scope": 56,
+									"src": "620:34:0",
+									"stateVariable": true,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_uint256",
+										"typeString": "uint256"
+									},
+									"typeName": {
+										"id": 23,
+										"name": "uint256",
+										"nodeType": "ElementaryTypeName",
+										"src": "620:7:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_uint256",
+											"typeString": "uint256"
+										}
+									},
+									"value": {
+										"argumentTypes": null,
+										"hexValue": "31",
+										"id": 24,
+										"isConstant": false,
+										"isLValue": false,
+										"isPure": true,
+										"kind": "number",
+										"lValueRequested": false,
+										"nodeType": "Literal",
+										"src": "653:1:0",
+										"subdenomination": null,
+										"typeDescriptions": {
+											"typeIdentifier": "t_rational_1_by_1",
+											"typeString": "int_const 1"
+										},
+										"value": "1"
+									},
+									"visibility": "private"
+								},
+								{
+									"anonymous": false,
+									"documentation": null,
+									"id": 33,
+									"name": "StatusChanged",
+									"nodeType": "EventDefinition",
+									"parameters": {
+										"id": 32,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 27,
+												"indexed": false,
+												"name": "id",
+												"nodeType": "VariableDeclaration",
+												"scope": 33,
+												"src": "681:10:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 26,
+													"name": "uint256",
+													"nodeType": "ElementaryTypeName",
+													"src": "681:7:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"value": null,
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 29,
+												"indexed": false,
+												"name": "latestStatus",
+												"nodeType": "VariableDeclaration",
+												"scope": 33,
+												"src": "693:17:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bool",
+													"typeString": "bool"
+												},
+												"typeName": {
+													"id": 28,
+													"name": "bool",
+													"nodeType": "ElementaryTypeName",
+													"src": "693:4:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_bool",
+														"typeString": "bool"
+													}
+												},
+												"value": null,
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 31,
+												"indexed": false,
+												"name": "timestamp",
+												"nodeType": "VariableDeclaration",
+												"scope": 33,
+												"src": "712:17:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 30,
+													"name": "uint256",
+													"nodeType": "ElementaryTypeName",
+													"src": "712:7:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"value": null,
+												"visibility": "internal"
+											}
+										],
+										"src": "680:50:0"
+									},
+									"src": "661:70:0"
+								},
+								{
+									"constant": false,
+									"id": 36,
+									"name": "holderChangeHistory",
+									"nodeType": "VariableDeclaration",
+									"scope": 56,
+									"src": "739:37:0",
+									"stateVariable": true,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_array$_t_address_$dyn_storage",
+										"typeString": "address[]"
+									},
+									"typeName": {
+										"baseType": {
+											"id": 34,
+											"name": "address",
+											"nodeType": "ElementaryTypeName",
+											"src": "739:7:0",
+											"typeDescriptions": {
+												"typeIdentifier": "t_address",
+												"typeString": "address"
+											}
+										},
+										"id": 35,
+										"length": null,
+										"nodeType": "ArrayTypeName",
+										"src": "739:9:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+											"typeString": "address[]"
+										}
+									},
+									"value": null,
+									"visibility": "private"
+								},
+								{
+									"constant": false,
+									"id": 39,
+									"name": "holderChangeTimestamps",
+									"nodeType": "VariableDeclaration",
+									"scope": 56,
+									"src": "783:40:0",
+									"stateVariable": true,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_array$_t_uint256_$dyn_storage",
+										"typeString": "uint256[]"
+									},
+									"typeName": {
+										"baseType": {
+											"id": 37,
+											"name": "uint256",
+											"nodeType": "ElementaryTypeName",
+											"src": "783:7:0",
+											"typeDescriptions": {
+												"typeIdentifier": "t_uint256",
+												"typeString": "uint256"
+											}
+										},
+										"id": 38,
+										"length": null,
+										"nodeType": "ArrayTypeName",
+										"src": "783:9:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+											"typeString": "uint256[]"
+										}
+									},
+									"value": null,
+									"visibility": "private"
+								},
+								{
+									"anonymous": false,
+									"documentation": null,
+									"id": 47,
+									"name": "HolderChanged",
+									"nodeType": "EventDefinition",
+									"parameters": {
+										"id": 46,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 41,
+												"indexed": false,
+												"name": "from",
+												"nodeType": "VariableDeclaration",
+												"scope": 47,
+												"src": "850:12:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_address",
+													"typeString": "address"
+												},
+												"typeName": {
+													"id": 40,
+													"name": "address",
+													"nodeType": "ElementaryTypeName",
+													"src": "850:7:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_address",
+														"typeString": "address"
+													}
+												},
+												"value": null,
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 43,
+												"indexed": false,
+												"name": "to",
+												"nodeType": "VariableDeclaration",
+												"scope": 47,
+												"src": "864:10:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_address",
+													"typeString": "address"
+												},
+												"typeName": {
+													"id": 42,
+													"name": "address",
+													"nodeType": "ElementaryTypeName",
+													"src": "864:7:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_address",
+														"typeString": "address"
+													}
+												},
+												"value": null,
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 45,
+												"indexed": false,
+												"name": "timestamp",
+												"nodeType": "VariableDeclaration",
+												"scope": 47,
+												"src": "876:17:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 44,
+													"name": "uint256",
+													"nodeType": "ElementaryTypeName",
+													"src": "876:7:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"value": null,
+												"visibility": "internal"
+											}
+										],
+										"src": "849:45:0"
+									},
+									"src": "830:65:0"
+								},
+								{
+									"anonymous": false,
+									"documentation": null,
+									"id": 55,
+									"name": "CreditChanged",
+									"nodeType": "EventDefinition",
+									"parameters": {
+										"id": 54,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 49,
+												"indexed": false,
+												"name": "original",
+												"nodeType": "VariableDeclaration",
+												"scope": 55,
+												"src": "958:16:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 48,
+													"name": "uint256",
+													"nodeType": "ElementaryTypeName",
+													"src": "958:7:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"value": null,
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 51,
+												"indexed": false,
+												"name": "amount",
+												"nodeType": "VariableDeclaration",
+												"scope": 55,
+												"src": "976:14:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 50,
+													"name": "uint256",
+													"nodeType": "ElementaryTypeName",
+													"src": "976:7:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"value": null,
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 53,
+												"indexed": false,
+												"name": "timestamp",
+												"nodeType": "VariableDeclaration",
+												"scope": 55,
+												"src": "992:17:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 52,
+													"name": "uint256",
+													"nodeType": "ElementaryTypeName",
+													"src": "992:7:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"value": null,
+												"visibility": "internal"
+											}
+										],
+										"src": "957:53:0"
+									},
+									"src": "938:73:0"
+								}
+							],
+							"scope": 57,
+							"src": "28:988:0"
+						}
+					],
+					"src": "0:1020:0"
+				},
+				"id": 0
+			}
+		}
+	}
+}

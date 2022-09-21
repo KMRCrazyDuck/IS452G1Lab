@@ -1,4 +1,4 @@
-pragma solidity >=0.5.12 <0.6.0;
+pragma solidity >=0.4.22 <0.6.0; 
 
 contract Auction {
     // Parameters of the auction. Times are either absolute unix timestamps (seconds since 1970-01-01)
@@ -54,6 +54,8 @@ contract Auction {
             now <= auctionEndTime,
             "Auction already ended."
         );
+        ended = true;
+        emit AuctionEnded(highestBidder, highestBid);
 
         // If the bid is not higher, send the
         // money back.

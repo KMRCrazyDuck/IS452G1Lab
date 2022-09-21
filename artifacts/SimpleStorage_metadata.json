@@ -25,7 +25,7 @@
 				"name": "get",
 				"outputs": [
 					{
-						"name": "retVal",
+						"name": "",
 						"type": "uint256"
 					}
 				],
@@ -43,7 +43,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"SimpleStorage.sol": "SimpleStorage"
+			"Basic.sol": "SimpleStorage"
 		},
 		"evmVersion": "byzantium",
 		"libraries": {},
@@ -54,10 +54,10 @@
 		"remappings": []
 	},
 	"sources": {
-		"SimpleStorage.sol": {
-			"keccak256": "0x06f9a498313bc3b1602d13f923c46b74c3bfe0c24cf80ba42591cb6282e877b7",
+		"Basic.sol": {
+			"keccak256": "0x9b40dccfc994e893bc1aba404e3c598bc89c65c89c8f1a3ebdb9540155fefa0f",
 			"urls": [
-				"bzzr://124b7fc025a76db1d58f2b728b4947737f4c31aee030957dedc2f9d594700f9e"
+				"bzzr://90211761e96ca135e110f393119c3b5a4316992d4f581d9ee59899cc9bfc11c3"
 			]
 		}
 	},
