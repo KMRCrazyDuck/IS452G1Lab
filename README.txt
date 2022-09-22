@@ -45,3 +45,7 @@ Week 2
 
 Week 4
 - Auction.sol
+
+Week 6
+- CreditLetter.sol
+- CreditLetterAdmin.sol
